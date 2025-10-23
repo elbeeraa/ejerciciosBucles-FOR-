@@ -7,7 +7,7 @@ public class Main {
         Caballo caballoJugador1 = new Caballo();
         Caballo caballoJugador2 = new Caballo();
 
-        Carrera carrera = new Carrera(caballoJugador1,caballoJugador2);
+        Carrera carrera = new Carrera();
         carrera.iniciarCarrera();
     }
 }

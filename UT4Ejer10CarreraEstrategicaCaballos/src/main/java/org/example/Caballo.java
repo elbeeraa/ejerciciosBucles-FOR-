@@ -1,5 +1,6 @@
 package org.example;
 
+
 public class Caballo {
     private int velocidadMaxima;
     private int velocidadNormal;
@@ -15,39 +16,43 @@ public class Caballo {
     }
 
     public void correr(int opcion) {
-
-        if (potencia != 0) {
-            switch (opcion) {
-                case 1:
-                    if (potencia >= 15) {
-                        distanciaRecorrida += velocidadMaxima;
-                        potencia -= 15;
-                    }
-                    break;
-                case 2:
-                    if (potencia >= 10) {
-                        distanciaRecorrida += velocidadNormal;
-                        potencia -= 10;
-                    }
-                    break;
-                case 3:
-                    if (potencia >= 5) {
-                        distanciaRecorrida += velocidadMinima;
-                        potencia -= 5;
-                    }
-                    break;
-                case 4:
-                    descansar();
-                    break;
-            }
+        if (potencia == 0) {
+            distanciaRecorrida += velocidadMinima;
+            return;
         }
-        distanciaRecorrida += velocidadMinima;
+        switch (opcion) {
+            case 1:
+                if (potencia >= 15) {
+                    distanciaRecorrida += velocidadMaxima;
+                    potencia -= 15;
+                }
+                break;
+            case 2:
+                if (potencia >= 10) {
+                    distanciaRecorrida += velocidadNormal;
+                    potencia -= 10;
+                }
+                break;
+            case 3:
+                if (potencia >= 5) {
+                    distanciaRecorrida += velocidadMinima;
+                    potencia -= 5;
+                }
+                break;
+            case 4:
+                descansar();
+                break;
+        }
+        if (potencia < 0) {
+            potencia = 0;
+        }
     }
 
     public void descansar(){
         potencia += 10;
     }
 
+    //region getters
     public int getPotencia() {
         return potencia;
     }
@@ -55,4 +60,6 @@ public class Caballo {
     public int getDistanciaRecorrida() {
         return distanciaRecorrida;
     }
+    //endregion
 }
+
