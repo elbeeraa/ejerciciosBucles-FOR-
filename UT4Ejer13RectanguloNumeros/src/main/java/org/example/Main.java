@@ -14,7 +14,8 @@ public class Main {
 
         for (int i = 0; i < respuestaFila; i++) {
             for (int k = 1; k <= respuestaColumna; k++) {
-                System.out.print(k + " ");
+//                System.out.print(k + " ");
+                System.out.printf("%4d",k);
             }
             System.out.println();
         }
